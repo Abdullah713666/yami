@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing Scale -->
+    <dimen name="spacing_xxs">2dp</dimen>
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">12dp</dimen>
+    <dimen name="spacing_lg">16dp</dimen>
+    <dimen name="spacing_xl">20dp</dimen>
+    <dimen name="spacing_xxl">24dp</dimen>
+    <dimen name="spacing_section">28dp</dimen>
+
+    <!-- Component Radii -->
+    <dimen name="radius_ledger_sheet">14dp</dimen>
+    <dimen name="radius_stepper">8dp</dimen>
+    <dimen name="radius_pill">100dp</dimen>
+    <dimen name="radius_chip">8dp</dimen>
+    <dimen name="radius_touch_grass_card">20dp</dimen>
+
+    <!-- Controls -->
+    <dimen name="stepper_btn_size">36dp</dimen>
+    <dimen name="stepper_value_width">44dp</dimen>
+    <dimen name="min_touch_target">48dp</dimen>
+    <dimen name="header_shahid_size">232dp</dimen>
+</resources>

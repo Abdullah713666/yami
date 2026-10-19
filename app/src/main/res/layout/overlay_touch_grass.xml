@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/touch_grass_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yami_break_scrim">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/touch_grass_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/spacing_xxl"
+        android:layout_marginEnd="@dimen/spacing_xxl"
+        app:cardBackgroundColor="@color/yami_break_card"
+        app:cardCornerRadius="@dimen/radius_touch_grass_card"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/yami_stroke"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/spacing_xl"
+            android:paddingTop="@dimen/spacing_xl"
+            android:paddingEnd="@dimen/spacing_xl"
+            android:paddingBottom="@dimen/spacing_xl">
+
+            <!-- Official Challan Header Tag -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/yami_challan_red_container"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.08"
+                android:paddingStart="@dimen/spacing_sm"
+                android:paddingTop="@dimen/spacing_xxs"
+                android:paddingEnd="@dimen/spacing_sm"
+                android:paddingBottom="@dimen/spacing_xxs"
+                android:text="@string/break_tag"
+                android:textColor="@color/yami_challan_red"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <com.example.yami.character.ShahidView
+                android:id="@+id/touch_grass_yami"
+                android:layout_width="@dimen/header_shahid_size"
+                android:layout_height="@dimen/header_shahid_size"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_sm" />
+
+            <TextView
+                android:id="@+id/touch_grass_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:gravity="center"
+                android:textColor="@color/yami_break_ink"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="Go touch grass 🌱" />
+
+            <TextView
+                android:id="@+id/touch_grass_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:gravity="center"
+                android:lineSpacingExtra="2dp"
+                android:textColor="@color/yami_break_sub"
+                android:textSize="14sp"
+                tools:text="You watched 42 reels today: 12 over your limit. Thumb off the glass, citizen." />
+
+            <!-- Disabled Countdown Wait Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/touch_grass_wait"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:backgroundTint="@color/yami_break_wait_bg"
+                android:enabled="false"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/yami_break_wait_text"
+                android:textSize="15sp"
+                app:cornerRadius="@dimen/radius_stepper"
+                tools:text="Wait 5s" />
+
+            <!-- Post-Countdown Choices -->
+            <LinearLayout
+                android:id="@+id/touch_grass_actions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/touch_grass_out"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/yami_break_out_bg"
+                    android:text="@string/break_take_me_out"
+                    android:textColor="@color/yami_break_out_text"
+                    android:textStyle="bold"
+                    app:cornerRadius="@dimen/radius_stepper" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/touch_grass_more"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/break_one_more"
+                    android:textColor="@color/yami_break_more_text"
+                    app:cornerRadius="@dimen/radius_stepper" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

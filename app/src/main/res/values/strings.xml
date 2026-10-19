@@ -1,0 +1,186 @@
+<resources>
+    <string name="app_name">Yami</string>
+
+    <string name="a11y_description">Lets Yami notice when you swipe to a new reel in Instagram so it can count them. Yami does not read or store messages or content.</string>
+
+    <string-array name="msg_concerned">
+        <item>Sirf %d reels baaki. I\'m watching 👀</item>
+        <item>%d left on your quota, citizen.</item>
+        <item>Careful… %d more and it\'s a challan.</item>
+    </string-array>
+
+    <string-array name="msg_limit_hit">
+        <item>STOP! Daily limit reached 🚨</item>
+        <item>Bas! That\'s your quota for today.</item>
+        <item>Phone neeche karo. Limit poori.</item>
+    </string-array>
+
+    <string-array name="msg_annoyed">
+        <item>%d over. Phone neeche, please.</item>
+        <item>Oye! %d reels over the limit.</item>
+        <item>I\'m writing this down. +%d</item>
+        <item>Move along, citizen. %d over.</item>
+    </string-array>
+
+    <string-array name="msg_angry">
+        <item>%d OVER?! Hands where I can see them!</item>
+        <item>Challan kat raha hai… +%d</item>
+        <item>Bas karo yaar! %d over!</item>
+        <item>Last warning. +%d</item>
+    </string-array>
+
+    <string-array name="msg_furious">
+        <item>%d OVER!!! 🚨🚨</item>
+        <item>FIR darj ho gayi. +%d</item>
+        <item>Arrested for doomscrolling. +%d</item>
+        <item>Main thak gaya hoon. %d over.</item>
+    </string-array>
+
+    <string-array name="break_messages_default">
+        <item>Go touch grass 🌱</item>
+        <item>Phone neeche. Hands up! 🚨</item>
+        <item>Drink a glass of water 💧</item>
+        <item>Call your ammi ☎️</item>
+        <item>Look out of the window for one minute</item>
+        <item>Stand up and stretch 🙆</item>
+        <item>Challan kat gaya. Break time!</item>
+    </string-array>
+
+    <string-array name="msg_thrown">
+        <item>Oye! Police se panga? 😤</item>
+        <item>Throwing an officer? That\'s a challan.</item>
+        <item>Main wardi mein hoon, bhai!</item>
+        <item>Ouch. Writing this in my report.</item>
+    </string-array>
+    <string-array name="msg_shaken">
+        <item>Chakkar aa gaye… 😵</item>
+        <item>Bas karo, sab ghoom raha hai!</item>
+        <item>Officer down! Officer down!</item>
+    </string-array>
+
+    <string name="msg_tap_stats">Today: %1$d / %2$d reels</string>
+    <string name="msg_tap_stats_nolimit">Today: %1$d reels</string>
+    <string name="slash">/</string>
+    <string name="break_tag">DUTY CITATION</string>
+    <string name="break_title">Go touch grass 🌱</string>
+    <string name="break_body">You watched %1$d reels today: %2$d over your quota. Thumb off the glass, citizen.</string>
+    <string name="break_wait">Wait %ds</string>
+    <string name="break_take_me_out">Take me out</string>
+    <string name="break_one_more">Just one more…</string>
+
+    <!-- Header & Duty Ledger -->
+    <string name="duty_badge">OFFICER ON DUTY • SHAHID ANWAR</string>
+    <string name="today_tally_format">%1$d / %2$d</string>
+    <string name="today_caption">reels today</string>
+    <string name="status_under_limit">On duty in Instagram Reels • %d remaining</string>
+    <string name="status_at_limit">Daily limit reached. Phone neeche!</string>
+    <string name="status_over_limit">%d reels over limit. Challan in progress!</string>
+    <string name="status_service_off">Inspection offline. Turn on accessibility.</string>
+
+    <!-- Setup Notice -->
+    <string name="setup_title">Inspector offline</string>
+    <string name="setup_body">Yami needs Android Accessibility to count reels in Instagram. Everything stays on this phone, nothing leaves.</string>
+    <string name="setup_button">Turn on inspection</string>
+
+    <!-- Limits -->
+    <string name="limits_title">Duty Limits</string>
+    <string name="daily_limit_label">Daily reel quota</string>
+    <string name="daily_limit_desc">All inspected apps</string>
+    <string name="ig_limit_label">Instagram quota</string>
+    <string name="ig_limit_desc">Separate cap for Reels</string>
+    <string name="break_after_label">Touch-grass break</string>
+    <string name="break_after_desc">Every N reels over limit</string>
+    <string name="off">Off</string>
+    <string name="minus">−</string>
+    <string name="plus">+</string>
+
+    <!-- Sound -->
+    <string name="sound_title">Police Alert Audio</string>
+    <string name="sound_off">Off</string>
+    <string name="sound_whistle">Whistle</string>
+    <string name="sound_siren">Siren</string>
+    <string name="sound_custom">My sound</string>
+    <string name="sound_custom_choose">Choose audio or video file</string>
+    <string name="sound_custom_change">Change</string>
+    <string name="sound_custom_helper">Plays for up to 5 seconds</string>
+    <string name="sound_on_limit">When I cross my limit</string>
+    <string name="sound_on_break">With every break card</string>
+    <string name="sound_every_over">Short whistle on every reel over limit</string>
+    <string name="sound_test_button">Test sound</string>
+
+    <!-- Messages -->
+    <string name="messages_section_title">Messages &amp; Lines</string>
+    <string name="messages_break_row">Break card messages</string>
+    <string name="messages_break_active">%d active</string>
+    <string name="messages_lines_row">Shahid\'s custom lines</string>
+    <string name="messages_lines_count">%d lines</string>
+
+    <!-- Patrol Overlay -->
+    <string name="yami_title">Patrol Officer</string>
+    <string name="overlay_switch_label">Show Shahid in Reels</string>
+    <string name="size_label">Officer size</string>
+    <string name="size_s">S</string>
+    <string name="size_m">M</string>
+    <string name="size_l">L</string>
+
+    <!-- Last 7 Days -->
+    <string name="last_7_days_title">Last 7 Days</string>
+
+    <!-- Playground -->
+    <string name="playground_title">Try Shahid</string>
+    <string name="playground_subtitle">Inspector drills. Does not alter your real count.</string>
+    <string name="chip_plus_one">+1 reel</string>
+    <string name="chip_milestone">Milestone</string>
+    <string name="chip_hit_limit">Hit limit</string>
+    <string name="chip_annoyed">Annoyed</string>
+    <string name="chip_angry">Angry</string>
+    <string name="chip_furious">Furious</string>
+    <string name="chip_touch_grass">Touch grass</string>
+    <string name="chip_reset_preview">Reset drill</string>
+    <string name="chip_dizzy">Dizzy</string>
+    <string name="chip_walk">Walk</string>
+    <string name="chip_climb">Climb</string>
+    <string name="chip_sleep">Sleep</string>
+    <string name="chip_dragged">Dragged</string>
+    <string name="chip_test_sound">Test sound</string>
+    <string name="reset_today_button">Reset today\'s count</string>
+    <string name="reset_dialog_title">Reset today\'s count to 0?</string>
+    <string name="reset_dialog_message">Shahid will wipe today\'s tally clean. This cannot be undone.</string>
+    <string name="reset">Reset tally</string>
+    <string name="cancel">Keep count</string>
+
+    <!-- Messages Activity -->
+    <string name="messages_activity_title">Duty Messages</string>
+    <string name="tab_break_messages">Break messages</string>
+    <string name="tab_custom_lines">Shahid\'s lines</string>
+    <string name="preview_card_title">Citation title preview</string>
+    <string name="add_break_hint">New break message</string>
+    <string name="add_button">Add</string>
+    <string name="official_badge">OFFICIAL</string>
+    <string name="custom_badge">CUSTOM</string>
+    <string name="err_min_one_break">At least one break message must stay enabled.</string>
+    <string name="custom_lines_helper">Once the limit is crossed, Shahid speaks these lines instead of his own. If empty, his standard warnings return. Use %d for reels over the limit.</string>
+    <string name="add_line_hint">New line (use %d for count)</string>
+    <string name="chip_preset_1">Oye! %d over, phone neeche!</string>
+    <string name="chip_preset_2">Challan kat gaya! %d reels over.</string>
+    <string name="chip_preset_3">Stop scrolling! %d over limit.</string>
+    <string name="edit_dialog_title">Edit message</string>
+    <string name="delete_dialog_title">Delete message?</string>
+    <string name="delete_dialog_msg">This message will be permanently removed.</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+    <string name="back">Back</string>
+
+    <!-- Accessibility content descriptions -->
+    <string name="cd_edit_break_message">Edit break message</string>
+    <string name="cd_delete_break_message">Delete break message</string>
+    <string name="cd_edit_custom_line">Edit custom line</string>
+    <string name="cd_delete_custom_line">Delete custom line</string>
+    <string name="cd_decrease_daily_limit">Decrease daily limit</string>
+    <string name="cd_increase_daily_limit">Increase daily limit</string>
+    <string name="cd_decrease_ig_limit">Decrease Instagram limit</string>
+    <string name="cd_increase_ig_limit">Increase Instagram limit</string>
+    <string name="cd_decrease_break_frequency">Decrease break frequency</string>
+    <string name="cd_increase_break_frequency">Increase break frequency</string>
+    <string name="cd_shahid_character">Shahid Anwar on duty. Tap to wave.</string>
+</resources>

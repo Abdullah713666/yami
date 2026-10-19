@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yami_bg">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        tools:context=".ui.MainActivity">
+
+        <LinearLayout
+            android:id="@+id/scroll_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/spacing_lg"
+            android:paddingTop="@dimen/spacing_sm"
+            android:paddingEnd="@dimen/spacing_lg"
+            android:paddingBottom="@dimen/spacing_section">
+
+            <!-- 1. Framed Surface 1 of 2: Duty Inspection Header -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/header_sheet"
+                style="@style/Widget.Yami.LedgerCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/spacing_lg"
+                    android:paddingTop="@dimen/spacing_sm"
+                    android:paddingEnd="@dimen/spacing_lg"
+                    android:paddingBottom="@dimen/spacing_md">
+
+                    <!-- Officer Badge Stamp -->
+                    <TextView
+                        android:id="@+id/duty_badge"
+                        style="@style/TextAppearance.Yami.Stamp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/yami_surface_subtle"
+                        android:paddingStart="@dimen/spacing_sm"
+                        android:paddingTop="@dimen/spacing_xxs"
+                        android:paddingEnd="@dimen/spacing_sm"
+                        android:paddingBottom="@dimen/spacing_xxs"
+                        android:text="@string/duty_badge"
+                        android:textColor="@color/yami_text_secondary" />
+
+                    <!-- Shahid Character (232dp x 232dp, rendering Shahid at ~126dp) + Speech Bubble Frame -->
+                    <FrameLayout
+                        android:id="@+id/hero_frame"
+                        android:layout_width="match_parent"
+                        android:layout_height="232dp"
+                        android:layout_marginTop="@dimen/spacing_xxs">
+
+                        <FrameLayout
+                            android:id="@+id/hero_yami_container"
+                            android:layout_width="@dimen/header_shahid_size"
+                            android:layout_height="@dimen/header_shahid_size"
+                            android:layout_gravity="center"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:contentDescription="@string/cd_shahid_character"
+                            android:focusable="true" />
+
+                        <com.example.yami.overlay.BubbleView
+                            android:id="@+id/hero_bubble"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|end"
+                            android:layout_marginTop="@dimen/spacing_xxs" />
+                    </FrameLayout>
+
+                    <!-- Tally Readout: single-glance count vs limit -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xxs"
+                        android:baselineAligned="true"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/today_count"
+                            style="@style/TextAppearance.Yami.Display"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="14" />
+
+                        <TextView
+                            android:id="@+id/today_limit_divider"
+                            style="@style/TextAppearance.Yami.Title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_xs"
+                            android:text="@string/slash"
+                            android:textColor="@color/yami_text_tertiary" />
+
+                        <TextView
+                            android:id="@+id/today_limit_target"
+                            style="@style/TextAppearance.Yami.Title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_xs"
+                            android:textColor="@color/yami_text_secondary"
+                            tools:text="30" />
+
+                        <TextView
+                            android:id="@+id/today_caption"
+                            style="@style/TextAppearance.Yami.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_sm"
+                            android:text="@string/today_caption" />
+                    </LinearLayout>
+
+                    <!-- Quota Gauge Progress Bar -->
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/today_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:layout_marginEnd="@dimen/spacing_md"
+                        app:indicatorColor="@color/yami_primary"
+                        app:trackColor="@color/yami_stroke"
+                        app:trackCornerRadius="2dp"
+                        app:trackThickness="6dp" />
+
+                    <!-- Single Status Line -->
+                    <TextView
+                        android:id="@+id/today_status"
+                        style="@style/TextAppearance.Yami.Body"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:gravity="center"
+                        android:textColor="@color/yami_ink"
+                        tools:text="On duty in Instagram Reels • 16 reels remaining" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Setup Prompt (Notice Slip, visible only when accessibility is off) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/setup_card"
+                style="@style/Widget.Yami.LedgerCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                app:cardBackgroundColor="@color/yami_challan_red_container"
+                app:strokeColor="@color/yami_challan_red">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_lg">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/setup_title"
+                        android:textColor="@color/yami_on_challan_red_container"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:text="@string/setup_body"
+                        android:textColor="@color/yami_on_challan_red_container"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/enable_button"
+                        style="@style/Widget.Yami.Button.Primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:backgroundTint="@color/yami_challan_red"
+                        android:text="@string/setup_button"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 2. Ledger Section: Duty Limits (Direct on yami_bg) -->
+            <TextView
+                style="@style/TextAppearance.Yami.Stamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_section"
+                android:text="@string/limits_title"
+                android:textColor="@color/yami_text_secondary" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:background="@color/yami_stroke" />
+
+            <!-- Row 1: Daily Limit -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.Yami.Subheading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/daily_limit_label" />
+
+                    <TextView
+                        style="@style/TextAppearance.Yami.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/daily_limit_desc" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/daily_limit_minus"
+                    style="@style/Widget.Yami.StepperButton"
+                    android:contentDescription="@string/cd_decrease_daily_limit"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/daily_limit_value"
+                    style="@style/TextAppearance.Yami.Subheading"
+                    android:layout_width="@dimen/stepper_value_width"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    tools:text="30" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/daily_limit_plus"
+                    style="@style/Widget.Yami.StepperButton"
+                    android:contentDescription="@string/cd_increase_daily_limit"
+                    android:text="@string/plus" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:background="@color/yami_stroke" />
+
+            <!-- Row 2: Instagram Limit -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/ig_limit_switch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:text="@string/ig_limit_label"
+                    android:textColor="@color/yami_ink"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ig_limit_minus"
+                    style="@style/Widget.Yami.StepperButton"
+                    android:contentDescription="@string/cd_decrease_ig_limit"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/ig_limit_value"
+                    style="@style/TextAppearance.Yami.Subheading"
+                    android:layout_width="@dimen/stepper_value_width"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    tools:text="20" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ig_limit_plus"
+                    style="@style/Widget.Yami.StepperButton"
+                    android:contentDescription="@string/cd_increase_ig_limit"
+                    android:text="@string/plus" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:background="@color/yami_stroke" />
+
+            <!-- Row 3: Break Card Frequency -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.Yami.Subheading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/break_after_label" />
+
+                    <TextView
+                        style="@style/TextAppearance.Yami.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/break_after_desc" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/break_after_minus"
+                    style="@style/Widget.Yami.StepperButton"
+                    android:contentDescription="@string/cd_decrease_break_frequency"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/break_after_value"
+                    style="@style/TextAppearance.Yami.Subheading"
+                    android:layout_width="@dimen/stepper_value_width"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    tools:text="10" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/break_after_plus"
+                    style="@style/Widget.Yami.StepperButton"
+                    android:contentDescription="@string/cd_increase_break_frequency"
+                    android:text="@string/plus" />
+            </LinearLayout>
+
+            <!-- 3. Ledger Section: Police Alert Audio (Direct on yami_bg) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_section"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.Yami.Stamp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sound_title"
+                    android:textColor="@color/yami_text_secondary" />
+
+                <!-- Quick Play Test Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sound_test_button"
+                    style="@style/Widget.Yami.Button.Outlined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sound_test_button"
+                    android:textSize="12sp"
+                    app:icon="@drawable/ic_play"
+                    app:iconPadding="@dimen/spacing_xs"
+                    app:iconSize="14dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:background="@color/yami_stroke" />
+
+            <!-- Sound Choice Toggle Group (Off / Whistle / Siren / My sound) -->
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/sound_choice_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sound_choice_off"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    android:padding="0dp"
+                    android:text="@string/sound_off"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sound_choice_whistle"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    android:padding="0dp"
+                    android:text="@string/sound_whistle"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sound_choice_siren"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    android:padding="0dp"
+                    android:text="@string/sound_siren"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sound_choice_custom"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.3"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    android:padding="0dp"
+                    android:text="@string/sound_custom"
+                    android:textSize="12sp" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <!-- Custom Sound Picker Area -->
+            <LinearLayout
+                android:id="@+id/sound_custom_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:background="@color/yami_surface_subtle"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/spacing_md"
+                android:paddingTop="@dimen/spacing_sm"
+                android:paddingEnd="@dimen/spacing_md"
+                android:paddingBottom="@dimen/spacing_sm"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/sound_custom_name"
+                        style="@style/TextAppearance.Yami.Subheading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="middle"
+                        android:singleLine="true"
+                        tools:text="police_honk.mp3" />
+
+                    <TextView
+                        style="@style/TextAppearance.Yami.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sound_custom_helper" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sound_custom_btn"
+                    style="@style/Widget.Yami.Button.Outlined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sound_custom_change"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:background="@color/yami_stroke" />
+
+            <!-- Trigger Switches -->
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/sound_limit_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sound_on_limit"
+                android:textColor="@color/yami_ink"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginBottom="@dimen/spacing_xs"
+                android:background="@color/yami_stroke" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/sound_break_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sound_on_break"
+                android:textColor="@color/yami_ink"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginBottom="@dimen/spacing_xs"
+                android:background="@color/yami_stroke" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/sound_every_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sound_every_over"
+                android:textColor="@color/yami_ink"
+                android:textSize="14sp" />
+
+            <!-- 4. Ledger Section: Duty Messages (Direct on yami_bg) -->
+            <TextView
+                style="@style/TextAppearance.Yami.Stamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_section"
+                android:text="@string/messages_section_title"
+                android:textColor="@color/yami_text_secondary" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginBottom="@dimen/spacing_xs"
+                android:background="@color/yami_stroke" />
+
+            <!-- Row 1: Break Card Messages -->
+            <LinearLayout
+                android:id="@+id/messages_break_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/spacing_sm"
+                android:paddingBottom="@dimen/spacing_sm">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.Yami.Subheading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/messages_break_row" />
+
+                    <TextView
+                        android:id="@+id/messages_break_count"
+                        style="@style/TextAppearance.Yami.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="7 active" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_chevron_right" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/yami_stroke" />
+
+            <!-- Row 2: Shahid's Lines -->
+            <LinearLayout
+                android:id="@+id/messages_lines_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/spacing_sm"
+                android:paddingBottom="@dimen/spacing_sm">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.Yami.Subheading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/messages_lines_row" />
+
+                    <TextView
+                        android:id="@+id/messages_lines_count"
+                        style="@style/TextAppearance.Yami.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="0 lines (using defaults)" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_chevron_right" />
+            </LinearLayout>
+
+            <!-- 5. Ledger Section: Patrol Officer (Direct on yami_bg) -->
+            <TextView
+                style="@style/TextAppearance.Yami.Stamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_section"
+                android:text="@string/yami_title"
+                android:textColor="@color/yami_text_secondary" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:background="@color/yami_stroke" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/overlay_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/overlay_switch_label"
+                android:textColor="@color/yami_ink"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:background="@color/yami_stroke" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.Yami.Subheading"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/size_label" />
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/size_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/size_s"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="44dp"
+                        android:layout_height="wrap_content"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:padding="0dp"
+                        android:text="@string/size_s" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/size_m"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="44dp"
+                        android:layout_height="wrap_content"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:padding="0dp"
+                        android:text="@string/size_m" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/size_l"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="44dp"
+                        android:layout_height="wrap_content"
+                        android:insetLeft="0dp"
+                        android:insetRight="0dp"
+                        android:padding="0dp"
+                        android:text="@string/size_l" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+            </LinearLayout>
+
+            <!-- 6. Ledger Section: Last 7 Days (Direct on yami_bg) -->
+            <TextView
+                style="@style/TextAppearance.Yami.Stamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_section"
+                android:text="@string/last_7_days_title"
+                android:textColor="@color/yami_text_secondary" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:background="@color/yami_stroke" />
+
+            <com.example.yami.ui.WeekBarsView
+                android:id="@+id/week_bars"
+                android:layout_width="match_parent"
+                android:layout_height="160dp" />
+
+            <!-- 7. Framed Surface 2 of 2: Inspector Playground Drill Sheet -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/playground_card"
+                style="@style/Widget.Yami.LedgerCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_section">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_lg">
+
+                    <TextView
+                        style="@style/TextAppearance.Yami.Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/playground_title" />
+
+                    <TextView
+                        style="@style/TextAppearance.Yami.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xxs"
+                        android:text="@string/playground_subtitle" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/playground_chip_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        app:chipSpacingHorizontal="@dimen/spacing_xs"
+                        app:chipSpacingVertical="@dimen/spacing_xs">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_plus_one"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_plus_one" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_milestone"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_milestone" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_hit_limit"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_hit_limit" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_annoyed"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_annoyed" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_angry"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_angry" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_furious"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_furious" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_touch_grass"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_touch_grass" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_dizzy"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_dizzy" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_walk"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_walk" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_climb"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_climb" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_sleep"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_sleep" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_dragged"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_dragged" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_test_sound"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_test_sound" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_reset_preview"
+                            style="@style/Widget.Material3.Chip.Assist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/chip_reset_preview" />
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/reset_today_button"
+                        style="@style/Widget.Yami.Button.Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:text="@string/reset_today_button"
+                        android:textColor="@color/yami_challan_red" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

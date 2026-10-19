@@ -1,0 +1,67 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Body -->
+    <path
+        android:fillColor="#34D399"
+        android:pathData="M 54,26.8 C 69.02,26.8 81.2,41.38 81.2,56.4 C 81.2,73.68 71.28,81.2 54,81.2 C 36.72,81.2 26.8,73.68 26.8,56.4 C 26.8,41.38 38.98,26.8 54,26.8 Z"
+        android:strokeColor="#1E1B2E"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="2.5" />
+
+    <!-- Shine -->
+    <group
+        android:pivotX="42.8"
+        android:pivotY="38.0"
+        android:rotation="-30">
+        <path
+            android:fillColor="#9BF6D4"
+            android:pathData="M 35.6,38 A 7.2,4 0 1,0 50,38 A 7.2,4 0 1,0 35.6,38 Z" />
+    </group>
+
+    <!-- Cheeks -->
+    <path
+        android:fillColor="#FF8FB1"
+        android:pathData="M 33.2,60.4 A 4,2.4 0 1,0 41.2,60.4 A 4,2.4 0 1,0 33.2,60.4 Z" />
+    <path
+        android:fillColor="#FF8FB1"
+        android:pathData="M 66.8,60.4 A 4,2.4 0 1,0 74.8,60.4 A 4,2.4 0 1,0 66.8,60.4 Z" />
+
+    <!-- Left Eye -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 39.2,51.6 A 6,7.2 0 1,0 51.2,51.6 A 6,7.2 0 1,0 39.2,51.6 Z"
+        android:strokeColor="#1E1B2E"
+        android:strokeWidth="1.3" />
+    <path
+        android:fillColor="#1E1B2E"
+        android:pathData="M 41.5,51.6 A 3.7,3.7 0 1,0 48.9,51.6 A 3.7,3.7 0 1,0 41.5,51.6 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 42.6,50 A 1.3,1.3 0 1,0 45.2,50 A 1.3,1.3 0 1,0 42.6,50 Z" />
+
+    <!-- Right Eye -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 56.8,51.6 A 6,7.2 0 1,0 68.8,51.6 A 6,7.2 0 1,0 56.8,51.6 Z"
+        android:strokeColor="#1E1B2E"
+        android:strokeWidth="1.3" />
+    <path
+        android:fillColor="#1E1B2E"
+        android:pathData="M 59.1,51.6 A 3.7,3.7 0 1,0 66.5,51.6 A 3.7,3.7 0 1,0 59.1,51.6 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 60.2,50 A 1.3,1.3 0 1,0 62.8,50 A 1.3,1.3 0 1,0 60.2,50 Z" />
+
+    <!-- Smile -->
+    <path
+        android:pathData="M 50,62 C 51.2,65.2 56.8,65.2 58,62"
+        android:strokeColor="#1E1B2E"
+        android:strokeLineCap="round"
+        android:strokeWidth="2" />
+
+</vector>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Theme: Night Patrol / Field Notebook -->
+    <!-- Surfaces & Neutrals -->
+    <color name="yami_bg">#FF15120F</color>
+    <color name="yami_surface_lowest">#FF120F0D</color>
+    <color name="yami_surface_low">#FF1B1713</color>
+    <color name="yami_surface">#FF201C18</color>
+    <color name="yami_surface_subtle">#FF2B2620</color>
+    <color name="yami_surface_highest">#FF352F27</color>
+    <color name="yami_surface_inverse">#FFFCFAF6</color>
+    <color name="yami_on_surface_inverse">#FF1B1713</color>
+    <color name="yami_card">#FF201C18</color>
+    <color name="yami_card_stroke">#FF352F27</color>
+    <color name="yami_stroke">#FF352F27</color>
+    <color name="yami_stroke_strong">#FF4E4539</color>
+    <color name="yami_highlight">#2FD8AB46</color>
+
+    <!-- Typography & Text -->
+    <color name="yami_ink">#FFEDE7DD</color>
+    <color name="yami_text_secondary">#FFA69C8E</color>
+    <color name="yami_text_tertiary">#FF7D7364</color>
+
+    <!-- Primary & Brand Accents -->
+    <color name="yami_primary">#FFD8AB46</color>
+    <color name="yami_on_primary">#FF1F1706</color>
+    <color name="yami_primary_container">#FF3D3018</color>
+    <color name="yami_on_primary_container">#FFF5DE96</color>
+
+    <!-- Brass / Badge Accents (Checked segments & selected tab) -->
+    <color name="yami_brass">#FFD8AB46</color>
+    <color name="yami_brass_container">#FF3D3018</color>
+    <color name="yami_on_brass_container">#FFF5DE96</color>
+    <color name="yami_khaki">#FFA8986B</color>
+
+    <!-- Challan Red / Warning / Limit Hit -->
+    <color name="yami_challan_red">#FFE05D4D</color>
+    <color name="yami_challan_red_container">#FF451712</color>
+    <color name="yami_on_challan_red_container">#FFF8CCC7</color>
+
+    <!-- Data Viz (Week Bars) -->
+    <color name="yami_chart_normal">#FF829E65</color>
+    <color name="yami_chart_over">#FFE05D4D</color>
+    <color name="yami_chart_dash">#FF7D7364</color>
+</resources>

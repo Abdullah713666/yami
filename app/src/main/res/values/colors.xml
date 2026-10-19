@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Basic base colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Light Theme: Duty Notebook / Day Shift -->
+    <!-- Surfaces & Neutrals -->
+    <color name="yami_bg">#FFF5EFEB</color>
+    <color name="yami_surface_lowest">#FFFFFFFF</color>
+    <color name="yami_surface_low">#FFFBF7F2</color>
+    <color name="yami_surface">#FFFCFAF6</color>
+    <color name="yami_surface_subtle">#FFEFE9DF</color>
+    <color name="yami_surface_highest">#FFE5DDCF</color>
+    <color name="yami_surface_inverse">#FF201C18</color>
+    <color name="yami_on_surface_inverse">#FFEDE7DD</color>
+    <color name="yami_card">#FFFCFAF6</color>
+    <color name="yami_card_stroke">#FFDDD5C7</color>
+    <color name="yami_stroke">#FFDDD5C7</color>
+    <color name="yami_stroke_strong">#FFB8AC98</color>
+    <color name="yami_highlight">#1F524328</color>
+
+    <!-- Typography & Text -->
+    <color name="yami_ink">#FF1B1713</color>
+    <color name="yami_text_secondary">#FF685E50</color>
+    <color name="yami_text_tertiary">#FF8C8171</color>
+
+    <!-- Primary & Brand Accents -->
+    <color name="yami_primary">#FF524328</color>
+    <color name="yami_on_primary">#FFFAF7F2</color>
+    <color name="yami_primary_container">#FFEADECB</color>
+    <color name="yami_on_primary_container">#FF2C2313</color>
+
+    <!-- Brass / Badge Accents (Checked segments & selected tab) -->
+    <color name="yami_brass">#FF8F6715</color>
+    <color name="yami_brass_container">#FFF7ECCF</color>
+    <color name="yami_on_brass_container">#FF332402</color>
+    <color name="yami_khaki">#FF7A6B45</color>
+
+    <!-- Challan Red / Warning / Limit Hit -->
+    <color name="yami_challan_red">#FFA32E22</color>
+    <color name="yami_challan_red_container">#FFFBE7E5</color>
+    <color name="yami_on_challan_red_container">#FF420E08</color>
+
+    <!-- Data Viz (Week Bars) -->
+    <color name="yami_chart_normal">#FF5C7444</color>
+    <color name="yami_chart_over">#FFA32E22</color>
+    <color name="yami_chart_dash">#FF8C8171</color>
+
+    <!-- Touch-Grass Overlay Card (Constant across day/night) -->
+    <color name="yami_break_scrim">#E615120F</color>
+    <color name="yami_break_card">#FFFBF8F2</color>
+    <color name="yami_break_ink">#FF1B1713</color>
+    <color name="yami_break_sub">#FF685E50</color>
+    <color name="yami_break_wait_bg">#FFE8E0D2</color>
+    <color name="yami_break_wait_text">#FF383126</color>
+    <color name="yami_break_out_bg">#FFA32E22</color>
+    <color name="yami_break_out_text">#FFFFFFFF</color>
+    <color name="yami_break_more_text">#FF685E50</color>
+</resources>

@@ -1,0 +1,55 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Yami" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Window & Background -->
+        <item name="android:colorBackground">@color/yami_bg</item>
+        <item name="android:windowBackground">@color/yami_bg</item>
+        <item name="android:statusBarColor">@color/yami_bg</item>
+        <item name="android:navigationBarColor">@color/yami_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+
+        <!-- Surfaces -->
+        <item name="colorSurface">@color/yami_surface</item>
+        <item name="colorOnSurface">@color/yami_ink</item>
+        <item name="colorSurfaceVariant">@color/yami_surface_subtle</item>
+        <item name="colorOnSurfaceVariant">@color/yami_text_secondary</item>
+        <item name="colorSurfaceContainerLowest">@color/yami_surface_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/yami_surface_low</item>
+        <item name="colorSurfaceContainer">@color/yami_surface</item>
+        <item name="colorSurfaceContainerHigh">@color/yami_surface_subtle</item>
+        <item name="colorSurfaceContainerHighest">@color/yami_surface_highest</item>
+        <item name="colorSurfaceInverse">@color/yami_surface_inverse</item>
+        <item name="colorOnSurfaceInverse">@color/yami_on_surface_inverse</item>
+
+        <!-- Primary (Duty Khaki) -->
+        <item name="colorPrimary">@color/yami_primary</item>
+        <item name="colorOnPrimary">@color/yami_on_primary</item>
+        <item name="colorPrimaryContainer">@color/yami_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/yami_on_primary_container</item>
+
+        <!-- Secondary (Brass Badge - controls checked toggle segments and tabs) -->
+        <item name="colorSecondary">@color/yami_brass</item>
+        <item name="colorOnSecondary">@color/yami_on_primary</item>
+        <item name="colorSecondaryContainer">@color/yami_brass_container</item>
+        <item name="colorOnSecondaryContainer">@color/yami_on_brass_container</item>
+
+        <!-- Tertiary (Khaki Trim) -->
+        <item name="colorTertiary">@color/yami_khaki</item>
+        <item name="colorOnTertiary">@color/yami_on_primary</item>
+        <item name="colorTertiaryContainer">@color/yami_primary_container</item>
+        <item name="colorOnTertiaryContainer">@color/yami_on_primary_container</item>
+
+        <!-- Error & Warnings (Challan Red) -->
+        <item name="colorError">@color/yami_challan_red</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorErrorContainer">@color/yami_challan_red_container</item>
+        <item name="colorOnErrorContainer">@color/yami_on_challan_red_container</item>
+
+        <!-- Outlines & Highlights -->
+        <item name="colorOutline">@color/yami_stroke</item>
+        <item name="colorOutlineVariant">@color/yami_stroke_strong</item>
+        <item name="colorControlHighlight">@color/yami_highlight</item>
+    </style>
+
+    <style name="Theme.Yami" parent="Base.Theme.Yami" />
+</resources>

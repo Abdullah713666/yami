@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text Appearances (System fonts only) -->
+    <style name="TextAppearance.Yami.Display" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/yami_ink</item>
+    </style>
+
+    <style name="TextAppearance.Yami.Title" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/yami_ink</item>
+    </style>
+
+    <style name="TextAppearance.Yami.Subheading" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/yami_ink</item>
+    </style>
+
+    <style name="TextAppearance.Yami.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/yami_text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.Yami.Caption" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/yami_text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.Yami.Stamp" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.06</item>
+        <item name="android:textColor">@color/yami_ink</item>
+    </style>
+
+    <!-- Stepper Buttons -->
+    <style name="Widget.Yami.StepperButton" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:layout_width">@dimen/stepper_btn_size</item>
+        <item name="android:layout_height">@dimen/stepper_btn_size</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">@dimen/radius_stepper</item>
+        <item name="backgroundTint">@color/yami_surface_subtle</item>
+        <item name="android:textColor">@color/yami_ink</item>
+        <item name="strokeColor">@color/yami_stroke</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- Ledger Card Style -->
+    <style name="Widget.Yami.LedgerCard" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/yami_surface</item>
+        <item name="cardCornerRadius">@dimen/radius_ledger_sheet</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/yami_stroke</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- Primary Action Button -->
+    <style name="Widget.Yami.Button.Primary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/yami_primary</item>
+        <item name="android:textColor">@color/yami_on_primary</item>
+        <item name="cornerRadius">@dimen/radius_stepper</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Outlined Button -->
+    <style name="Widget.Yami.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/yami_stroke_strong</item>
+        <item name="android:textColor">@color/yami_ink</item>
+        <item name="cornerRadius">@dimen/radius_stepper</item>
+    </style>
+
+    <!-- Text / Subtle Button -->
+    <style name="Widget.Yami.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/yami_text_secondary</item>
+        <item name="cornerRadius">@dimen/radius_stepper</item>
+    </style>
+</resources>
