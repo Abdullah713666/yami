@@ -2,7 +2,14 @@
 
 An Android app that helps you stop doomscrolling Instagram Reels. **Shahid Anwar**, a pixel-art Pakistani police officer, sits on top of the Reels feed, counts every reel you swipe past, and gets angrier the further you go past the daily limit you set yourself.
 
-<!-- screenshots -->
+<p align="center">
+  <img src="docs/screenshots/shahid.png" alt="Shahid Anwar" width="180">
+</p>
+
+![Main screen and settings](docs/screenshots/app-screens.png)
+
+![Shahid's animation frames](docs/screenshots/shahid-animations.png)
+
 
 ## What it does
 
